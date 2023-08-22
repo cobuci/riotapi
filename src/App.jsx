@@ -1,39 +1,43 @@
-import { useEffect, useState } from "react";
+import axios from "axios";
+import { Fragment, useEffect, useState } from "react";
 
 
 function App() {
 
+  const [heroes, setHeroes] = useState([{}]);
 
-  const buscarDados = async () => {
-    const response = await fetch('https://ddragon.leagueoflegends.com/cdn/13.16.1/data/pt_BR/champion.json');
-    const data = await response.json();
-    return data.data;
-  };
-  
-  
-  const ApiRiot = () => {
-    const [heroes, setHeroes] = useState([]);
-  
-    useEffect(() => {
-      const heroesPromise = buscarDados();
-      Promise.all([heroesPromise]).then(heroes => {
-        setHeroes(heroes.map(hero => Object.entries(hero)));
-      });
-    }, []);
-  
-    return (
-      <div>
-        <h1>Heroes</h1>
-        {heroes}
-      </div>
-    );
-  
-  };
+  const getChamps = () => {
+    axios
+      .get("https://ddragon.leagueoflegends.com/cdn/13.16.1/data/pt_BR/champion.json")
+      .then((res) => { setHeroes(res.data.data) })
+  }
+
+  useEffect(() => {
+    getChamps()
+  }, []);
+
+  const mappedChampions = Object.keys(heroes).map((champion) => ({
+    name: heroes[champion].name,
+    tags: heroes[champion].tags,
+  }));
+
   return (
-    <>
-      {ApiRiot()}
-    </>
-  )
+    <div>
+      {mappedChampions.map((champion , key) => {
+        return (
+          <Fragment key={key}>
+            <p>
+              {champion.name}
+            </p>
+            <p>  {champion.tags}
+            </p>   </Fragment>
+        )
+
+      })}
+    </div>
+  );
+
+
 }
 
 export default App
