@@ -24,7 +24,7 @@ export default function NewCard({ name, description, img, keyChamp, tag }) {
                 return "https://static.wikia.nocookie.net/leagueoflegends/images/2/28/Slayer_icon.png";
             case "Mage":
                 return "https://static.wikia.nocookie.net/leagueoflegends/images/2/28/Mage_icon.png/";
-            case "Spport":
+            case "Support":
                 return "https://static.wikia.nocookie.net/leagueoflegends/images/5/58/Controller_icon.png";
             case "Fighter":
                 return "https://static.wikia.nocookie.net/leagueoflegends/images/8/8f/Fighter_icon.png";
