@@ -1,10 +1,11 @@
 
 import axios from "axios";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ChampionCard from "./components/ChampionCard";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { AppBar, Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Navbar from "./components/Navbar";
+import NewCard from "./components/NewCard";
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
     name: heroes[champion].name,
     id: heroes[champion].id,
     tags: heroes[champion].tags,
-    description: heroes[champion].blurb,
+    description: heroes[champion].title,
+    keyChamp: heroes[champion].key,
   }));
 
 
@@ -44,8 +46,8 @@ function App() {
 
   const showChampions = mappedChampions.map((champion, key) => {
     return (
-      <Grid md={3} key={key}>
-        <ChampionCard name={champion.name} img={champion.id} description={champion.description} />
+      <Grid md={4} key={key}>
+        <NewCard name={champion.name} keyChamp={champion.keyChamp} img={champion.id} description={champion.description} />
       </Grid>
     )
   });
