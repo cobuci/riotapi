@@ -44,7 +44,6 @@ export default function NewCard({ name, description, img, keyChamp, tag }) {
     };
 
 
-
     return (
         <React.Fragment >
             <div className='card' style={imgChamp}>

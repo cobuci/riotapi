@@ -1,12 +1,11 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ChampionCard from "./components/ChampionCard";
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { Container } from "@mui/material";
-import Navbar from "./components/Navbar/Navbar";
+
 import NewCard from "./components/Card/NewCard";
 
+import { Container, Grid } from "@mui/material";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 
@@ -30,11 +29,11 @@ function App() {
     keyChamp: heroes[champion].key,
   }));
 
- 
+
 
   const championFilter = (name) => {
     const filteredChamp = []
-    if (name ===""){
+    if (name === "") {
       getChamps()
     }
     for (let i in heroes) {
@@ -48,16 +47,15 @@ function App() {
   const showChampions = mappedChampions.map((champion, key) => {
 
     return (
-      <Grid md={4} key={key}>
+      <Grid item md={4} key={key}>
         <NewCard name={champion.name} keyChamp={champion.keyChamp} img={champion.id} description={champion.description} tag={(champion.tags)} />
-       
       </Grid>
     )
   });
   <Navbar championFilter={championFilter} />
   return (
     <div>
-     
+
       <Container maxWidth='lg'>
         <Grid container spacing={6}>
           {showChampions}
