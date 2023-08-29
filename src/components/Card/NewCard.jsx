@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
 import './card.css'
+import atkIcon from '../../assets/images/sword.png'
+import defIcon from '../../assets/images/shield.png'
+import magIcon from '../../assets/images/magic.png'
+import difIcon from '../../assets/images/skull.png'
 
 
-export default function NewCard({ name, description, img, keyChamp, tag }) {
+export default function NewCard({ name, description, img, keyChamp, tag, attribute }) {
 
 
     let imgChamp = {};
@@ -43,11 +47,11 @@ export default function NewCard({ name, description, img, keyChamp, tag }) {
         backgroundImage: `url(${getTagImageUrl(tag2)})`,
     };
 
-    const [isFlipped, setIsFlipped] = useState(false);
+    const progresso = {
 
-    const handleDivClick = () => {
-        setIsFlipped(!isFlipped);
-    };
+    }
+
+
 
     return (
         <React.Fragment >
@@ -75,7 +79,52 @@ export default function NewCard({ name, description, img, keyChamp, tag }) {
                         </div>
                     </div>
                     <div className="back">
-                        <div className='card' style={imgChamp}></div>
+                        <div className='card' style={imgChamp}>
+                            <div className="linearGradient">
+                                <div className="attributes">
+                                    <div className="atk">
+                                        <div className="attributeName">
+                                            <p>Atk</p>
+                                            <img src={atkIcon} className="icon"></img>
+                                        </div>
+                                        <div className="progresso progress-attack">
+                                            <span style={{ width: `${attribute?.attack * 10}%` }} />
+                                        </div>
+                                    </div>
+
+                                    <div className="def">
+                                        <div className="attributeName">
+                                            <p>Def</p>
+                                            <img src={defIcon} className="icon"></img>
+                                        </div>
+                                        <div className="progresso progress-def">
+                                            <span style={{ width: `${attribute?.defense * 10}%` }} />
+                                        </div>
+                                    </div>
+
+                                    <div className="mag">
+                                        <div className="attributeName">
+                                            <p>Magic</p>
+                                            <img src={magIcon} className="icon"></img>
+                                        </div>
+                                        <div className="progresso progress-mag">
+                                            <span style={{ width: `${attribute?.magic * 10}%` }} />
+                                        </div>
+                                    </div>
+
+                                    <div className="dif">
+                                        <div className="attributeName">
+                                            <p>Difficulty</p>
+                                            <img src={difIcon} className="icon"></img>
+                                        </div>
+
+                                        <div className="progresso progress-dif">
+                                            <span style={{ width: `${attribute?.difficulty * 10}%` }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
