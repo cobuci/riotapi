@@ -53,10 +53,10 @@ function App() {
       </Grid>
     )
   });
-  <Navbar championFilter={championFilter} />
+ 
   return (
     <div>
-
+    <Navbar championFilter={championFilter} />
       <Container maxWidth='lg'>
         <Grid container spacing={6}>
           {showChampions}
