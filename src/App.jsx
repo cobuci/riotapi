@@ -27,6 +27,7 @@ function App() {
     tags: heroes[champion].tags,
     description: heroes[champion].title,
     keyChamp: heroes[champion].key,
+    attribute: heroes[champion].info,
   }));
 
 
@@ -48,7 +49,7 @@ function App() {
 
     return (
       <Grid item md={4} key={key}>
-        <NewCard name={champion.name} keyChamp={champion.keyChamp} img={champion.id} description={champion.description} tag={(champion.tags)} />
+        <NewCard name={champion.name} keyChamp={champion.keyChamp} img={champion.id} description={champion.description} tag={(champion.tags)} attribute={champion.attribute}/>
       </Grid>
     )
   });
@@ -59,6 +60,7 @@ function App() {
       <Container maxWidth='lg'>
         <Grid container spacing={6}>
           {showChampions}
+        
         </Grid>
       </Container>
 
