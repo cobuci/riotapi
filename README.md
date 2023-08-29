@@ -1,8 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Riotapi
+Apenas um projeto de teste para aprender um pouco de REACT e a mexer com API.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+
+- Listar todos os campeões do League of Legends
+- Preview de informações básicas
+- SearchBar para filtrar campeões
+- Responsivo
+
+
+## Ilustração Card
+
+
+<img src="src/assets/images/back_card.png">
+
+<img src="src/assets/images/front_card.png">
