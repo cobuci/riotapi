@@ -12,8 +12,9 @@ Apenas um projeto de teste para aprender um pouco de REACT e a mexer com API.
 
 
 ## Ilustração Card
+- Front
+<img src="src/assets/images/front_card.png">
 
-
+- Back
 <img src="src/assets/images/back_card.png">
 
-<img src="src/assets/images/front_card.png">
