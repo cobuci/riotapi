@@ -13,7 +13,7 @@ function App() {
 
   const getChamps = () => {
     axios
-      .get("https://ddragon.leagueoflegends.com/cdn/13.16.1/data/pt_BR/champion.json")
+      .get("https://ddragon.leagueoflegends.com/cdn/13.23.1/data/pt_BR/champion.json")
       .then((res) => { setHeroes(res.data.data) })
   }
 
